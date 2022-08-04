@@ -7,7 +7,18 @@ const save = document.getElementById("save");
 let listBag = [];
 
 // restore the list if any saved lists exist
-let existing = localStorage.getItem("toDos");
+function loadList() {
+  if (localStorage.getItem("toDos") != null) {
+    var toDos = JSON.parse(localStorage.getItem("toDos"));
+
+    for (var i = 0; i < toDos.length; i++) {
+      var toDo = toDos[i];
+      newToDoItem(toDo.task, toDo.completed);
+    }
+  }
+}
+
+loadList();
 
 function render(itemText, completed) {
   let listItem = document.createElement("li");
@@ -85,16 +96,3 @@ function saveList() {
 save.addEventListener("click", function () {
   saveList();
 });
-
-function loadList() {
-  if (localStorage.getItem("toDos") != null) {
-    var toDos = JSON.parse(localStorage.getItem("toDos"));
-
-    for (var i = 0; i < toDos.length; i++) {
-      var toDo = toDos[i];
-      newToDoItem(toDo.task, toDo.completed);
-    }
-  }
-}
-
-loadList();
