@@ -85,3 +85,16 @@ function saveList() {
 save.addEventListener("click", function () {
   saveList();
 });
+
+function loadList() {
+  if (localStorage.getItem("toDos") != null) {
+    var toDos = JSON.parse(localStorage.getItem("toDos"));
+
+    for (var i = 0; i < toDos.length; i++) {
+      var toDo = toDos[i];
+      newToDoItem(toDo.task, toDo.completed);
+    }
+  }
+}
+
+loadList();
