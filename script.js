@@ -36,6 +36,7 @@ add.addEventListener("click", function () {
 function toggleCompleteState() {
   if (this.classList.contains("completed")) {
     this.classList.remove("completed");
+    this.classList.add("unCompleted")
   } else {
     this.classList.add("completed");
     this.classList.remove("unCompleted")
