@@ -67,7 +67,7 @@ empty.addEventListener("click", function () {
 // Save the list
 let inComplete = Array.from(toDoList.getElementsByClassName("unCompleted"))
 function saveList() {
-  inComplete
+  console.log(inComplete);
 }
 
 save.addEventListener("click", function () {
