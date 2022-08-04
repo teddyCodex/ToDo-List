@@ -11,6 +11,7 @@ let listBag = [];
 
 function render(itemText, completed) {
   let listItem = document.createElement("li");
+  listItem.classList.add("unCompleted")
   let listText = document.createTextNode(itemText);
   listItem.appendChild(listText);
   if (completed) {
@@ -35,9 +36,9 @@ add.addEventListener("click", function () {
 function toggleCompleteState() {
   if (this.classList.contains("completed")) {
     this.classList.remove("completed");
-    this.classList.add("unCompleted")
   } else {
     this.classList.add("completed");
+    this.classList.remove("unCompleted")
   }
 }
 
