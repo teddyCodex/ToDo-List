@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo List App</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>My ToDo list</h1>
+
+      <p>Double-click an item to mark it complete.</p>
+
+      <div class="main-list">
+        <div class="add-items">
+          <input id="input" type="text" placeholder="Go Shopping..." />
+          <button id="add">ADD</button>
+        </div>
+        <div class="list-items">
+          <ul id="todo-list"></ul>
+        </div>
+      </div>
+      <div class="buttons">
+        <button id="clear-complete">Clear Complete</button>
+        <button id="empty">Empty List</button>
+        <button id="save">Save List</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
