@@ -7,12 +7,11 @@ const save = document.getElementById("save");
 let listBag = [];
 
 // restore the list if any saved lists exist
-let existing = localStorage.getItem("toDos")
-
+let existing = localStorage.getItem("toDos");
 
 function render(itemText, completed) {
   let listItem = document.createElement("li");
-  listItem.classList.add("unCompleted")
+  listItem.classList.add("unCompleted");
   let listText = document.createTextNode(itemText);
   listItem.appendChild(listText);
   if (completed) {
@@ -37,10 +36,10 @@ add.addEventListener("click", function () {
 function toggleCompleteState() {
   if (this.classList.contains("completed")) {
     this.classList.remove("completed");
-    this.classList.add("unCompleted")
+    this.classList.add("unCompleted");
   } else {
     this.classList.add("completed");
-    this.classList.remove("unCompleted")
+    this.classList.remove("unCompleted");
   }
 }
 
@@ -67,13 +66,20 @@ empty.addEventListener("click", function () {
 // Save the list
 
 function saveList() {
-  let inComplete = Array.from(toDoList.getElementsByClassName("unCompleted"))
-  localStorage.setItem("toDos", JSON.stringify(inComplete))
-  console.log(inComplete);
-  // for (i = 0; i < inComplete.length; i++) {
-  //   localStorage.setItem("toDos", JSON.stringify(inComplete[i]))
-  //   console.log(inComplete[i]);
-  // }
+  var toDos = [];
+
+  for (var i = 0; i < toDoList.children.length; i++) {
+    var toDo = toDoList.children.item(i);
+
+    var toDoInfo = {
+      task: toDo.innerText,
+      completed: toDo.classList.contains("completed"),
+    };
+
+    toDos.push(toDoInfo);
+  }
+
+  localStorage.setItem("toDos", JSON.stringify(toDos));
 }
 
 save.addEventListener("click", function () {
