@@ -69,7 +69,7 @@ empty.addEventListener("click", function () {
 function saveList() {
   let inComplete = Array.from(toDoList.getElementsByClassName("unCompleted"))
   for (i = 0; i < inComplete.length; i++) {
-    localStorage.setItem("toDos", inComplete[i])
+    localStorage.setItem("toDos", inComplete[i].childNodes)
     console.log(inComplete[i]);
   }
 }
