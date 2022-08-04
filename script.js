@@ -65,7 +65,7 @@ empty.addEventListener("click", function () {
 
 // Save the list
 function saveList() {
-  let unCompleteList = toDoList.classList.contains("unCompleted")
+  let unCompleteList = toDoList.getElementsByClassName("unCompleted")
   localStorage.setItem("toDos", JSON.stringify(unCompleteList));
 }
 
