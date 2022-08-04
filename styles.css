@@ -131,6 +131,12 @@ button:active {
   box-shadow: -6px 6px 12px #e6e6fa, 6px -6px 12px #e6e6fa;
 }
 
+@media screen and (max-width: 375px) {
+  .add-items input {
+    box-shadow: unset;
+  }
+}
+
 .list-items {
   padding-bottom: 10px;
 }
