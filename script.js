@@ -6,6 +6,9 @@ const empty = document.getElementById("empty");
 const save = document.getElementById("save");
 let listBag = [];
 
+// restore the list if any saved lists exist
+
+
 function render(itemText, completed) {
   let listItem = document.createElement("li");
   let listText = document.createTextNode(itemText);
@@ -43,6 +46,7 @@ function clearCompleted() {
   while (completedItems.length > 0) {
     completedItems.item(0).remove();
   }
+  console.log(completedItems);
 }
 
 clearComplete.addEventListener("click", function () {
