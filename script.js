@@ -35,6 +35,7 @@ add.addEventListener("click", function () {
 function toggleCompleteState() {
   if (this.classList.contains("completed")) {
     this.classList.remove("completed");
+    this.classList.add("unCompleted")
   } else {
     this.classList.add("completed");
   }
@@ -62,6 +63,7 @@ empty.addEventListener("click", function () {
 
 // Save the list
 function saveList() {
+
   localStorage.setItem("toDos", JSON.stringify(listBag));
 }
 
