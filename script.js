@@ -13,7 +13,7 @@ function loadList() {
 
     for (var i = 0; i < toDos.length; i++) {
       var toDo = toDos[i];
-      newToDoItem(toDo.task, toDo.completed);
+      render(toDo.task, toDo.completed);
     }
   }
 }
