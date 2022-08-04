@@ -69,6 +69,7 @@ empty.addEventListener("click", function () {
 function saveList() {
   let inComplete = Array.from(toDoList.getElementsByClassName("unCompleted"))
   localStorage.setItem("toDos", JSON.stringify(inComplete))
+  console.log(inComplete);
   // for (i = 0; i < inComplete.length; i++) {
   //   localStorage.setItem("toDos", JSON.stringify(inComplete[i]))
   //   console.log(inComplete[i]);
