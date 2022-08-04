@@ -8,7 +8,7 @@ let listBag = [];
 
 // restore the list if any saved lists exist
 let existing = localStorage.getItem("toDos")
-toDoList = render(existing, false)
+toDoList.appendChild(existing)
 
 function render(itemText, completed) {
   let listItem = document.createElement("li");
